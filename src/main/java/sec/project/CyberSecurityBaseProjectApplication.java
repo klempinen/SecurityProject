@@ -19,7 +19,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan
 @EnableAutoConfiguration
 @SpringBootApplication
-public class CyberSecurityBaseProjectApplication extends SpringBootServletInitializer implements EmbeddedServletContainerCustomizer  {
+public class CyberSecurityBaseProjectApplication implements EmbeddedServletContainerCustomizer  {
 
     public static void main(String[] args) throws Throwable {
         SpringApplication.run(CyberSecurityBaseProjectApplication.class);
@@ -38,26 +38,5 @@ public class CyberSecurityBaseProjectApplication extends SpringBootServletInitia
             }
         );
     } 
-    @Override
-    public void onStartup(ServletContext servletContext) throws ServletException {
-        // This can be done here or as the last step in the method
-        // Doing it in this order will initialize the Spring
-        // Framework first, doing it as last step will initialize
-        // the Spring Framework after the Servlet configuration is 
-        // established
-        super.onStartup(servletContext);
-
-        // This will set to use COOKIE only
-        servletContext
-            .setSessionTrackingModes(
-                Collections.singleton(SessionTrackingMode.URL)
-        );
-        // This will prevent any JS on the page from accessing the
-        // cookie - it will only be used/accessed by the HTTP transport
-        // mechanism in use
-        //SessionCookieConfig sessionCookieConfig=
-        //        servletContext.getSessionCookieConfig();
-        //sessionCookieConfig.setHttpOnly(true);
-    }
 
 }

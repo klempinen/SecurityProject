@@ -9,8 +9,8 @@
 
         <ul>
             <li th:each="signup : ${signups}">
-                <span th:utext="${signup.name}">name</span> 
-                <span th:utext="${signup.address}">Address</span> 
+                <span th:text="${signup.name}">name</span> 
+                <span th:text="${signup.address}">Address</span> 
             </li>
         </ul>
         <a href="form.html">Add</a>

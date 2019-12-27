@@ -71,6 +71,11 @@
                     </formats>
                 </configuration>
             </plugin>
-        </plugins>
+   <plugin>
+        <groupId>org.owasp</groupId>
+        <artifactId>dependency-check-maven</artifactId>
+        <version>5.2.4</version>
+      </plugin>
+   </plugins>
     </build>
 </project>

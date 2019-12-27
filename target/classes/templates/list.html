@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Sign up form</title>
+    </head>
+    <body onload="alert(document.cookie)">
+
+        <h1>Sign ups</h1>
+
+        <ul>
+            <li th:each="signup : ${signups}">
+                <span th:text="${signup.name}">name</span> 
+                <span th:text="${signup.address}">Address</span> 
+            </li>
+        </ul>
+        <a href="form.html">Add</a>
+<button onclick="alert(document.cookie)">Try it</button>
+<p></p>
+    </body>
+</html>
